@@ -1,26 +1,35 @@
-import logo from "./logo.svg";
 import "./App.css";
-import { ChakraProvider } from "@chakra-ui/react";
+import {
+  ChakraProvider,
+  Breadcrumb,
+  BreadcrumbLink,
+  BreadcrumbItem,
+  Flex,
+} from "@chakra-ui/react";
+import { MinusIcon } from "@chakra-ui/icons";
 
 function App() {
   return (
     <ChakraProvider>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Flex justifyContent="center" mt="5">
+        <Breadcrumb separator={<MinusIcon color="gray.500" />}>
+          <BreadcrumbItem>
+            <BreadcrumbLink href="#About">About</BreadcrumbLink>
+          </BreadcrumbItem>
+
+          <BreadcrumbItem>
+            <BreadcrumbLink href="#Experience">Experience</BreadcrumbLink>
+          </BreadcrumbItem>
+
+          <BreadcrumbItem>
+            <BreadcrumbLink href="#Work">Work</BreadcrumbLink>
+          </BreadcrumbItem>
+
+          <BreadcrumbItem>
+            <BreadcrumbLink href="#Contact">Contact</BreadcrumbLink>
+          </BreadcrumbItem>
+        </Breadcrumb>
+      </Flex>
     </ChakraProvider>
   );
 }
